@@ -31,7 +31,7 @@
 			"type": "object",
 			"title": "The Explicit Folding configuration",
 			"properties": {
-				"folding": {
+				"explicitFolding.markers": {
 					"type": "object",
 					"description": "Markers that will determine the folding ranges."
 				}

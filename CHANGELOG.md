@@ -1,3 +1,6 @@
+## pr-54200
+- use `foldingStrategy`
+
 ## v0.2.1
 - rename repository
 

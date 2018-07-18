@@ -9,30 +9,46 @@ Manually controls how and where to fold your code
 
 In your Settings
 ```
-"folding": {
-    "*": {
-        "begin": "\\{\\{\\{",
+"editor.foldingStrategy": "explicit",
+ 
+"explicitFolding.markers": {
+    "comments": {
+        "start": "\\/\\*\\*",
+        "end": "\\*\\/"
+    },
+    "regions": {
+        "start": "\\{\\{\\{",
         "end": "\\}\\}\\}"
-    },
-    "typescript": {
-        "begin": "#region",
-        "end": "#endregion"
-    },
-    "javascriptreact": [
-        {
-            "begin": "\\{/\\*",
-            "end": "\\*/\\}"
-        },
-        {
-            "begin": "<",
-            "end": "/>"
+    }
+}
+
+"[typescript]": {
+    "explicitFolding.markers": {
+        "regions": {
+            "begin": "#region",
+            "end": "#endregion"
         }
-    ]
+    }
+}
+
+"[javascriptreact]": {
+    "explicitFolding.markers": {
+        "regions": [
+            {
+                "begin": "\\{/\\*",
+                "end": "\\*/\\}"
+            },
+            {
+                "begin": "<",
+                "end": "/>"
+            }
+        ]
+    }
 }
 ```
 
 ## Known Issues
 
-- It's unable to remove existing folding
+- Can't support language specific configuration due to Microsoft/vscode#26707
 
 **Enjoy!**
