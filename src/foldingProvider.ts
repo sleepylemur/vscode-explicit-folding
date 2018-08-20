@@ -99,7 +99,8 @@ export class ExplicitFoldingProvider implements FoldingRangeProvider {
 	
 	private confirmRegionRange(config: FoldingConfig, document: TextDocument, lineCount: number, foldingRanges: FoldingRange[], foldingRangeStart: number, marker: FoldingRegex): number {
 		let i = foldingRangeStart + 1;
-		let line, j;
+		let j;
+		let line;
 		
 		while (i < lineCount) {
 			line = document.lineAt(i).text;
@@ -170,9 +171,11 @@ export class ExplicitFoldingProvider implements FoldingRangeProvider {
 		}
 		
 		const foldingRanges: FoldingRange[] = [];
-		const lineCount = document.lineCount;
+		const { lineCount } = document;
+		
 		let i = 0;
-		let line, j;
+		let j;
+		let line;
 		
 		while (i < lineCount) {
 			line = document.lineAt(i).text;
